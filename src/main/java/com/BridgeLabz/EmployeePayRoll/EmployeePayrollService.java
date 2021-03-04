@@ -1,10 +1,7 @@
 package com.BridgeLabz.EmployeePayRoll;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class EmployeePayrollService {
@@ -25,13 +22,12 @@ public class EmployeePayrollService {
     }
 
 
-
     public static void main(String[] args) {
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
         Scanner consoleInputReader = new Scanner(System.in);
         employeePayrollService.readEmployeePayrollData(consoleInputReader);
         employeePayrollService.writeEmployeePayrollData();
-    }
+ }
 
     /* Read Employee Payroll data from console */
     private void readEmployeePayrollData(Scanner consoleInputReader) {
