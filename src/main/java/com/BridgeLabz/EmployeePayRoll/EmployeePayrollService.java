@@ -1,4 +1,6 @@
 package com.BridgeLabz.EmployeePayRoll;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import java.util.ArrayList;
@@ -16,6 +18,13 @@ public class EmployeePayrollService {
     public EmployeePayrollService() {
         employeePayrollList = new ArrayList<>();
     }
+
+
+    public EmployeePayrollService(List<EmployeePayrollData> asList) {
+
+    }
+
+
 
     public static void main(String[] args) {
         EmployeePayrollService employeePayrollService = new EmployeePayrollService();
