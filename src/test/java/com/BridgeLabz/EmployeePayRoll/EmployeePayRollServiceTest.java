@@ -1,16 +1,21 @@
 package com.BridgeLabz.EmployeePayRoll;
 
+package com.BridgeLabz.EmployeePayRoll;
+
 import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class EmployeePayRollServiceTest {
+public class EmployeePayRollServiceTest
+{
     static EmployeePayrollService employeePayrollService;
 
     @BeforeClass
-    public static void initializeConstructor() {
+    public static void initializeConstructor()
+    {
         employeePayrollService = new EmployeePayrollService();
     }
 
@@ -29,5 +34,14 @@ public class EmployeePayRollServiceTest {
         };
         employeePayrollService = new EmployeePayrollService(Arrays.asList(arrayOfEmps));
         employeePayrollService.writeEmployeePayrollData(EmployeePayrollService.IOService.FILE_IO);
+        employeePayrollService.printData(EmployeePayrollService.IOService.FILE_IO);
+        long entries = employeePayrollService.countEntries(EmployeePayrollService.IOService.FILE_IO);
+        Assert.assertEquals(3, entries);
+    }
+
+    @Test
+    public void givenFileOnReadingFileShouldMatchEmployeeCount() {
+        EmployeePayrollService employeePayrollService = new EmployeePayrollService();
+        List<EmployeePayrollData> entries = employeePayrollService.readPayrollData(EmployeePayrollService.IOService.FILE_IO);
     }
 }
